@@ -1,0 +1,142 @@
+---
+title: 'Commands'
+description: 'Complete reference of all Nelson CLI commands'
+---
+
+## Overview
+
+Nelson CLI commands start with a forward slash (`/`). Type any command at the prompt to execute it.
+
+## Available Commands
+
+### /help
+
+Display the help menu with all available commands.
+
+```
+You: /help
+```
+
+<ResponseField name="Output" type="string">
+  Shows a formatted list of all commands and their descriptions.
+</ResponseField>
+
+---
+
+### /clear
+
+Clear the terminal screen and show the Nelson logo.
+
+```
+You: /clear
+```
+
+<Tip>Great for starting fresh after a long conversation</Tip>
+
+---
+
+### /model
+
+Display the current AI model being used.
+
+```
+You: /model
+```
+
+<ResponseField name="Output" type="string">
+  Model: sonnet (Claude Sonnet 4)
+</ResponseField>
+
+---
+
+### /nelson-loop
+
+Start a Nelson Loop for iterative AI development. This is one of Nelson's most powerful features.
+
+```
+You: /nelson-loop "Your task description" --max-iterations 20 --completion-haha "DONE"
+```
+
+<ParamField path="prompt" type="string" required>
+  The task you want Nelson to work on iteratively
+</ParamField>
+
+<ParamField path="--max-iterations" type="number">
+  Maximum number of iterations before stopping (default: unlimited)
+</ParamField>
+
+<ParamField path="--completion-haha" type="string">
+  The phrase Nelson should output when the task is complete
+</ParamField>
+
+<Card title="Learn more about Nelson Loop" icon="rotate" href="/features/nelson-loop">
+  Deep dive into iterative development with Nelson
+</Card>
+
+---
+
+### /cancel-nelson
+
+Cancel an active Nelson Loop.
+
+```
+You: /cancel-nelson
+```
+
+<ResponseField name="Output" type="string">
+  HA-HA! Cancelled Nelson loop (was at iteration N)
+</ResponseField>
+
+---
+
+### /status
+
+Show the current status of Nelson, including model and loop state.
+
+```
+You: /status
+```
+
+<ResponseField name="Output" type="object">
+  Shows current model, loop status, and iteration count if active.
+</ResponseField>
+
+---
+
+### /exit
+
+Exit Nelson CLI. You can also use `/quit` or `/q`.
+
+```
+You: /exit
+```
+
+<Note>Nelson will say goodbye with his signature "HA-HA!"</Note>
+
+## Command Summary
+
+| Command | Description |
+|---------|-------------|
+| `/help` | Show help menu |
+| `/clear` | Clear screen |
+| `/model` | Show current model |
+| `/nelson-loop` | Start iterative loop |
+| `/cancel-nelson` | Cancel active loop |
+| `/status` | Show status |
+| `/exit` | Exit Nelson CLI |
+
+## Natural Language
+
+Besides commands, you can just talk to Nelson naturally:
+
+```
+You: Help me write a Python function to parse JSON
+
+You: Read the file src/index.js and explain what it does
+
+You: Run the tests and fix any failures
+
+You: Create a new React component called UserProfile
+```
+
+Nelson understands context and will use his tools (file operations, bash commands, etc.) to accomplish your requests.

@@ -1,0 +1,121 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Nelson",
+  "logo": {
+    "dark": "/logo/nelson.png",
+    "light": "/logo/nelson.png"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#E17E5E",
+    "light": "#E9A088",
+    "dark": "#E17E5E",
+    "background": {
+      "dark": "#0D0D0D",
+      "light": "#FFFFFF"
+    },
+    "anchors": {
+      "from": "#E17E5E",
+      "to": "#E9A088"
+    }
+  },
+  "font": {
+    "headings": {
+      "family": "Inter",
+      "weight": 600
+    },
+    "body": {
+      "family": "Inter",
+      "weight": 400
+    }
+  },
+  "modeToggle": {
+    "default": "dark"
+  },
+  "topbarLinks": [
+    {
+      "name": "Community",
+      "url": "https://x.com/nelsonmuntzai"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Get Started",
+    "url": "https://www.npmjs.com/package/nelson-muntz-cli"
+  },
+  "tabs": [
+    {
+      "name": "Documentation",
+      "url": "/"
+    },
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Website",
+      "icon": "globe",
+      "url": "https://nelsonmuntz.xyz"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "icon": "rocket",
+      "pages": [
+        "introduction",
+        "quickstart",
+        "installation"
+      ]
+    },
+    {
+      "group": "Essentials",
+      "icon": "book",
+      "pages": [
+        "essentials/commands",
+        "essentials/configuration",
+        "essentials/models"
+      ]
+    },
+    {
+      "group": "Features",
+      "icon": "sparkles",
+      "pages": [
+        "features/nelson-loop",
+        "features/tools",
+        "features/personality",
+        "features/new-features"
+      ]
+    },
+    {
+      "group": "Guides",
+      "icon": "map",
+      "pages": [
+        "guides/building-apps",
+        "guides/iterative-development",
+        "guides/best-practices"
+      ]
+    },
+    {
+      "group": "API Reference",
+      "icon": "code",
+      "pages": [
+        "api-reference/overview",
+        "api-reference/tools"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "website": "https://nelsonmuntz.xyz",
+    "x": "https://x.com/nelsonmuntzai"
+  },
+  "backgroundImage": "/images/background.png",
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true
+  },
+  "search": {
+    "prompt": "Search documentation..."
+  }
+}

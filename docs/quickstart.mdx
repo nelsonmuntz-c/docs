@@ -1,0 +1,121 @@
+---
+title: 'Quickstart'
+description: 'Get started with Nelson CLI in under 2 minutes'
+---
+
+## Installation
+
+Install Nelson CLI globally using npm:
+
+```bash
+npm install -g nelson-muntz-cli
+```
+
+<Check>Nelson CLI requires Node.js 18 or higher</Check>
+
+## Set Up Your API Key
+
+Nelson uses Claude's API, so you'll need an Anthropic API key.
+
+<Steps>
+  <Step title="Get your API key">
+    Visit [console.anthropic.com](https://console.anthropic.com/) and create an API key.
+  </Step>
+  <Step title="Set the environment variable">
+    ```bash
+    export ANTHROPIC_API_KEY="sk-ant-..."
+    ```
+
+    <Tip>Add this to your `~/.bashrc` or `~/.zshrc` to make it permanent</Tip>
+  </Step>
+</Steps>
+
+## Launch Nelson
+
+```bash
+nelson
+```
+
+You'll see the animated Nelson logo and welcome screen:
+
+```
+  ███╗  ██╗███████╗██╗     ███████╗ ██████╗ ███╗  ██╗
+  ████╗ ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ██║
+  ██╔██╗██║█████╗  ██║     ███████╗██║   ██║██╔██╗██║
+  ██║╚████║██╔══╝  ██║     ╚════██║██║   ██║██║╚████║
+  ██║ ╚███║███████╗███████╗███████║╚██████╔╝██║ ╚███║
+  ╚═╝  ╚══╝╚══════╝╚══════╝╚══════╝ ╚═════╝ ╚═╝  ╚══╝
+
+              ★ HA-HA! Welcome to Nelson CLI! ★
+```
+
+## Your First Conversation
+
+Just type naturally and press Enter:
+
+```
+You: Help me create a function that validates email addresses
+
+Nelson: HA-HA! Email validation? Let me show you how it's done...
+```
+
+Nelson will write the code, explain it, and even save it to a file if you ask.
+
+## Try Some Commands
+
+<CardGroup cols={2}>
+  <Card title="/help" icon="circle-question">
+    Show all available commands
+  </Card>
+  <Card title="/clear" icon="broom">
+    Clear the screen
+  </Card>
+  <Card title="/nelson-loop" icon="rotate">
+    Start an iterative development loop
+  </Card>
+  <Card title="/exit" icon="door-open">
+    Exit Nelson CLI
+  </Card>
+</CardGroup>
+
+## Example Session
+
+Here's a quick example of what Nelson can do:
+
+```
+You: Create a simple Express server with a health endpoint
+
+Nelson: HA-HA! An Express server? Easy. Let me set that up for you...
+
+🔧 Tool: write_file
+✅ Tool: write_file
+
+Created server.js with a basic Express setup. Here's what I wrote:
+
+- Express server on port 3000
+- GET /health endpoint returning { status: 'ok' }
+- Error handling middleware
+
+Run it with: node server.js
+
+Want me to add more endpoints or set up tests?
+```
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Learn Commands"
+    icon="terminal"
+    href="/essentials/commands"
+  >
+    Master all Nelson CLI commands
+  </Card>
+  <Card
+    title="Nelson Loop"
+    icon="rotate"
+    href="/features/nelson-loop"
+  >
+    Set up iterative development cycles
+  </Card>
+</CardGroup>

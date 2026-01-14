@@ -1,0 +1,201 @@
+---
+title: 'Best Practices'
+description: 'Get the most out of Nelson CLI'
+---
+
+## Communication
+
+### Be Specific
+
+<Tabs>
+  <Tab title="❌ Vague">
+    ```
+    Make the code better
+    ```
+  </Tab>
+  <Tab title="✅ Specific">
+    ```
+    Refactor the auth middleware to:
+    - Use async/await instead of callbacks
+    - Add proper error handling
+    - Include TypeScript types
+    ```
+  </Tab>
+</Tabs>
+
+### Provide Context
+
+When working on existing code, let Nelson read relevant files first:
+
+```
+You: Read src/api/users.js and src/models/user.js
+
+Nelson: [Reads files]
+
+You: Now add email verification to the registration flow
+```
+
+### Use Step-by-Step for Complex Tasks
+
+Break complex requests into steps:
+
+```
+You: Let's build a payment integration:
+1. First, read the current checkout flow
+2. Then design the payment service interface
+3. Implement the Stripe integration
+4. Add tests
+5. Update the checkout flow to use payments
+```
+
+## Working with Files
+
+### Let Nelson Explore First
+
+```
+You: What's the structure of this project?
+
+Nelson: [Lists directories]
+
+You: Read the main entry point
+
+Nelson: [Reads index.js]
+
+You: Now I need to add a new feature...
+```
+
+### Review Changes
+
+Nelson shows what tools are used. Pay attention to:
+- Which files are being modified
+- What commands are being run
+- Any errors or warnings
+
+### Use Edit for Small Changes
+
+For small, targeted changes, be specific about what to change:
+
+```
+You: In config.js, change the timeout from 5000 to 10000
+```
+
+## Using Nelson Loop
+
+### Always Set Max Iterations
+
+```bash
+# Good - has a safety limit
+/nelson-loop "Build feature X" --max-iterations 20
+
+# Risky - could run forever
+/nelson-loop "Build feature X"
+```
+
+### Define Clear Completion Criteria
+
+<Tabs>
+  <Tab title="❌ Unclear">
+    ```bash
+    /nelson-loop "Make the app work better"
+    ```
+  </Tab>
+  <Tab title="✅ Clear">
+    ```bash
+    /nelson-loop "Fix all failing tests in the auth module.
+    Output <haha>TESTS FIXED</haha> when npm test shows 0 failures."
+    --completion-haha "TESTS FIXED" --max-iterations 15
+    ```
+  </Tab>
+</Tabs>
+
+### Include Verification Steps
+
+```bash
+/nelson-loop "Implement the search feature:
+1. Add search endpoint
+2. Write tests
+3. RUN THE TESTS
+4. Output <haha>DONE</haha> only when tests pass"
+--completion-haha "DONE" --max-iterations 20
+```
+
+## Project Organization
+
+### Run from Project Root
+
+```bash
+# Good - full project context
+cd ~/projects/my-app
+nelson
+
+# Less ideal - limited context
+cd ~/projects/my-app/src/utils
+nelson
+```
+
+### Keep a Clean Working Directory
+
+Nelson works best when your project is organized:
+- Use `.gitignore` to exclude node_modules, etc.
+- Keep related files together
+- Use clear naming conventions
+
+## Error Handling
+
+### When Things Go Wrong
+
+If Nelson makes a mistake:
+
+```
+You: That's not quite right. The function should return a Promise, not a callback
+
+Nelson: HA-HA! My bad. Let me fix that...
+```
+
+### When Loops Get Stuck
+
+If a Nelson Loop isn't making progress:
+
+```bash
+/cancel-nelson
+```
+
+Then try with:
+- A clearer prompt
+- Smaller scope
+- Different approach
+
+## Performance Tips
+
+<CardGroup cols={2}>
+  <Card title="Start Small" icon="seedling">
+    Begin with small tasks to understand Nelson's capabilities
+  </Card>
+  <Card title="Iterate Often" icon="rotate">
+    Frequent small requests > one massive request
+  </Card>
+  <Card title="Use Tests" icon="vial">
+    Tests help Nelson verify implementations
+  </Card>
+  <Card title="Trust but Verify" icon="shield-check">
+    Review Nelson's changes, especially for critical code
+  </Card>
+</CardGroup>
+
+## Anti-Patterns to Avoid
+
+<Warning>
+  **Don't** ask Nelson to make changes to files you haven't let him read
+</Warning>
+
+<Warning>
+  **Don't** run infinite loops without `--max-iterations`
+</Warning>
+
+<Warning>
+  **Don't** give vague requirements and expect perfect results
+</Warning>
+
+<Warning>
+  **Don't** skip testing - always verify changes work
+</Warning>

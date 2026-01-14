@@ -1,0 +1,313 @@
+---
+title: 'Tools Reference'
+description: 'Complete reference for all Nelson CLI tools'
+---
+
+## Tool Schema
+
+Each tool is defined with a JSON schema that Claude uses to understand how to call it.
+
+## read_file
+
+Read the contents of a file.
+
+<CodeGroup>
+```json Schema
+{
+  "name": "read_file",
+  "description": "Read the contents of a file at the specified path",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "The path to the file to read"
+      }
+    },
+    "required": ["path"]
+  }
+}
+```
+
+```javascript Implementation
+async function readFile(filePath) {
+  const resolvedPath = path.resolve(filePath);
+  if (!existsSync(resolvedPath)) {
+    throw new Error(`File not found: ${filePath}`);
+  }
+  return await fs.readFile(resolvedPath, 'utf-8');
+}
+```
+</CodeGroup>
+
+<ResponseField name="Returns" type="string">
+  The contents of the file as a string
+</ResponseField>
+
+---
+
+## write_file
+
+Write content to a file.
+
+<CodeGroup>
+```json Schema
+{
+  "name": "write_file",
+  "description": "Write content to a file. Creates parent directories as needed.",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "The path where the file should be written"
+      },
+      "content": {
+        "type": "string",
+        "description": "The content to write to the file"
+      }
+    },
+    "required": ["path", "content"]
+  }
+}
+```
+
+```javascript Implementation
+async function writeFile(filePath, content) {
+  const resolvedPath = path.resolve(filePath);
+  const dir = path.dirname(resolvedPath);
+  await fs.mkdir(dir, { recursive: true });
+  await fs.writeFile(resolvedPath, content, 'utf-8');
+  return `Successfully wrote ${content.length} characters to ${filePath}`;
+}
+```
+</CodeGroup>
+
+<ResponseField name="Returns" type="string">
+  Success message with character count
+</ResponseField>
+
+---
+
+## edit_file
+
+Make targeted edits to existing files.
+
+<CodeGroup>
+```json Schema
+{
+  "name": "edit_file",
+  "description": "Edit a file by replacing a specific string with new content",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "The path to the file to edit"
+      },
+      "old_string": {
+        "type": "string",
+        "description": "The exact string to find and replace"
+      },
+      "new_string": {
+        "type": "string",
+        "description": "The string to replace it with"
+      }
+    },
+    "required": ["path", "old_string", "new_string"]
+  }
+}
+```
+
+```javascript Implementation
+async function editFile(filePath, oldString, newString) {
+  const content = await fs.readFile(filePath, 'utf-8');
+  if (!content.includes(oldString)) {
+    throw new Error(`String not found in file`);
+  }
+  const newContent = content.replace(oldString, newString);
+  await fs.writeFile(filePath, newContent, 'utf-8');
+  return `Successfully edited ${filePath}`;
+}
+```
+</CodeGroup>
+
+<ResponseField name="Returns" type="string">
+  Success message
+</ResponseField>
+
+---
+
+## list_directory
+
+List the contents of a directory.
+
+<CodeGroup>
+```json Schema
+{
+  "name": "list_directory",
+  "description": "List the contents of a directory",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "The directory path to list"
+      }
+    },
+    "required": []
+  }
+}
+```
+
+```javascript Implementation
+async function listDirectory(dirPath = '.') {
+  const entries = await fs.readdir(dirPath, { withFileTypes: true });
+  return entries.map(entry => {
+    const type = entry.isDirectory() ? '[DIR]' : '[FILE]';
+    return `${type} ${entry.name}`;
+  }).join('\n');
+}
+```
+</CodeGroup>
+
+<ResponseField name="Returns" type="string">
+  Formatted list of files and directories
+</ResponseField>
+
+---
+
+## bash
+
+Execute a bash command.
+
+<CodeGroup>
+```json Schema
+{
+  "name": "bash",
+  "description": "Execute a bash command and return the output",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "command": {
+        "type": "string",
+        "description": "The bash command to execute"
+      },
+      "timeout": {
+        "type": "number",
+        "description": "Timeout in milliseconds (default: 30000)"
+      }
+    },
+    "required": ["command"]
+  }
+}
+```
+
+```javascript Implementation
+async function runBash(command, timeout = 30000) {
+  const { stdout, stderr } = await execAsync(command, {
+    timeout,
+    maxBuffer: 10 * 1024 * 1024,
+    cwd: process.cwd(),
+  });
+  let result = stdout || '';
+  if (stderr) result += `\n[stderr] ${stderr}`;
+  return result || 'Command executed successfully';
+}
+```
+</CodeGroup>
+
+<ResponseField name="Returns" type="string">
+  Command output (stdout and stderr)
+</ResponseField>
+
+---
+
+## search_files
+
+Search for files matching a glob pattern.
+
+<CodeGroup>
+```json Schema
+{
+  "name": "search_files",
+  "description": "Search for files matching a glob pattern",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "pattern": {
+        "type": "string",
+        "description": "Glob pattern (e.g., '**/*.js')"
+      },
+      "path": {
+        "type": "string",
+        "description": "Base directory to search in"
+      }
+    },
+    "required": ["pattern"]
+  }
+}
+```
+</CodeGroup>
+
+<ResponseField name="Returns" type="string">
+  List of matching file paths
+</ResponseField>
+
+---
+
+## grep
+
+Search for a pattern in files.
+
+<CodeGroup>
+```json Schema
+{
+  "name": "grep",
+  "description": "Search for a pattern in files",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "pattern": {
+        "type": "string",
+        "description": "The regex pattern to search for"
+      },
+      "path": {
+        "type": "string",
+        "description": "File or directory to search in"
+      },
+      "file_pattern": {
+        "type": "string",
+        "description": "Optional glob to filter files"
+      }
+    },
+    "required": ["pattern"]
+  }
+}
+```
+</CodeGroup>
+
+<ResponseField name="Returns" type="string">
+  Matching lines with file paths and line numbers
+</ResponseField>
+
+## Error Handling
+
+All tools throw errors on failure:
+
+```javascript
+try {
+  const result = await executeToolCall(toolName, input);
+  // Success
+} catch (error) {
+  // Handle error
+  return {
+    type: 'tool_result',
+    tool_use_id: id,
+    content: `Error: ${error.message}`,
+    is_error: true,
+  };
+}
+```
+
+Nelson gracefully handles tool errors and often retries with a different approach.

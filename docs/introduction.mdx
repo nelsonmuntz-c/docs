@@ -1,0 +1,67 @@
+---
+title: Introduction
+description: 'Leverage Nelson CLI to bring AI-powered coding assistance directly to your terminal'
+---
+
+## Getting Started
+
+Leverage Nelson tools and guides to give your development workflow AI-powered assistance and automation, bringing intelligent coding to your terminal.
+
+<Info>
+  Looking for quick setup? Check out the [Quickstart Guide](/quickstart) to get Nelson running in under 2 minutes.
+</Info>
+
+## What is Nelson CLI?
+
+Nelson CLI is a terminal-based AI assistant powered by Claude Sonnet 4. It provides full coding capabilities directly in your command line, with a unique personality that makes development more engaging.
+
+### Core Capabilities
+
+<CardGroup cols={2}>
+  <Card title="Natural Language Interface" icon="message">
+    Talk to Nelson like a colleague. Describe what you want, and Nelson handles the implementation.
+  </Card>
+  <Card title="File Operations" icon="file-code">
+    Read, write, and edit files directly. Nelson understands your codebase and makes intelligent changes.
+  </Card>
+  <Card title="Command Execution" icon="terminal">
+    Run tests, install packages, execute builds. Nelson integrates with your entire toolchain.
+  </Card>
+  <Card title="Iterative Development" icon="rotate">
+    Use Nelson Loop for automated iteration cycles that run until your goals are met.
+  </Card>
+</CardGroup>
+
+## Quick Example
+
+```bash
+$ nelson
+
+You: Create a REST API with Express that has user CRUD endpoints
+
+Nelson: HA-HA! Let me set that up for you...
+
+🔧 Tool: write_file → package.json
+🔧 Tool: bash → npm install express
+🔧 Tool: write_file → src/index.js
+🔧 Tool: write_file → src/routes/users.js
+
+Done! Your API is ready. Run `npm start` to launch it.
+```
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Install and run Nelson in 2 minutes
+  </Card>
+  <Card title="Commands" icon="terminal" href="/essentials/commands">
+    Learn all available commands
+  </Card>
+  <Card title="Nelson Loop" icon="rotate" href="/features/nelson-loop">
+    Master iterative development
+  </Card>
+  <Card title="Tools" icon="wrench" href="/features/tools">
+    Explore file and bash operations
+  </Card>
+</CardGroup>

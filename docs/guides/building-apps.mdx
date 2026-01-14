@@ -1,0 +1,148 @@
+---
+title: 'Building Apps'
+description: 'Use Nelson to build complete applications from scratch'
+---
+
+## Overview
+
+Nelson excels at building complete applications. Whether it's a REST API, a CLI tool, or a full-stack web app, Nelson can help you go from zero to working code.
+
+## Building a REST API
+
+Let's walk through building a complete TODO API with Nelson.
+
+### Step 1: Project Setup
+
+```
+You: Set up a new Node.js project for a REST API with Express and TypeScript
+```
+
+Nelson will:
+- Initialize package.json
+- Install dependencies (express, typescript, etc.)
+- Create tsconfig.json
+- Set up basic folder structure
+
+### Step 2: Define the Data Model
+
+```
+You: Create a Todo type with id, title, completed, and createdAt fields
+```
+
+### Step 3: Implement Endpoints
+
+```
+You: Implement CRUD endpoints for todos:
+- GET /todos - list all
+- GET /todos/:id - get one
+- POST /todos - create
+- PUT /todos/:id - update
+- DELETE /todos/:id - delete
+```
+
+### Step 4: Add Validation
+
+```
+You: Add input validation to the POST and PUT endpoints
+```
+
+### Step 5: Add Tests
+
+```
+You: Write Jest tests for all the endpoints
+```
+
+### Step 6: Verify Everything Works
+
+```
+You: Run the tests and make sure everything passes
+```
+
+## Building a CLI Tool
+
+### Example: A File Organizer CLI
+
+```
+You: Build a CLI tool that organizes files in a directory by extension.
+It should:
+- Take a directory path as argument
+- Create folders for each file extension
+- Move files into their respective folders
+- Have a --dry-run option to preview changes
+- Use commander for argument parsing
+```
+
+Nelson will create a complete, working CLI tool.
+
+## Building a Web App
+
+### Example: A React Dashboard
+
+```
+You: Create a React dashboard with:
+- A sidebar navigation
+- A main content area
+- A stats overview component
+- A recent activity list
+- Dark mode support using Tailwind CSS
+```
+
+## Using Nelson Loop for App Building
+
+For complex apps, use Nelson Loop to let the AI iterate until everything works:
+
+```bash
+/nelson-loop "Build a complete authentication system:
+
+1. User model with email and hashed password
+2. Register endpoint with validation
+3. Login endpoint with JWT generation
+4. Auth middleware for protected routes
+5. Tests for all endpoints
+
+Run tests after each implementation step.
+Output <haha>AUTH COMPLETE</haha> when all tests pass." --completion-haha "AUTH COMPLETE" --max-iterations 30
+```
+
+## Tips for Building Apps
+
+<CardGroup cols={2}>
+  <Card title="Start with Structure" icon="sitemap">
+    Ask Nelson to set up the project structure first
+  </Card>
+  <Card title="Build Incrementally" icon="layer-group">
+    Add features one at a time, testing as you go
+  </Card>
+  <Card title="Let Nelson Read" icon="book">
+    Before adding to existing code, let Nelson read the current files
+  </Card>
+  <Card title="Use Tests" icon="vial">
+    Ask Nelson to write tests - they help verify the implementation
+  </Card>
+</CardGroup>
+
+## Complete Example: Building a URL Shortener
+
+Here's how a full conversation might look:
+
+```
+You: Build a URL shortener API with Node.js and Express
+
+Nelson: HA-HA! A URL shortener? Let's make it good...
+
+[Creates project structure]
+[Implements URL model]
+[Creates POST /shorten endpoint]
+[Creates GET /:code redirect endpoint]
+[Adds validation]
+[Writes tests]
+
+Done! Your URL shortener is ready. Here's what I built:
+- POST /shorten - takes a URL, returns a short code
+- GET /:code - redirects to the original URL
+- Collision-resistant short codes
+- Input validation
+- Full test coverage
+
+Try it: npm start, then POST to /shorten with {"url": "https://example.com"}
+```

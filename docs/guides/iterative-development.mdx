@@ -1,0 +1,170 @@
+---
+title: 'Iterative Development'
+description: 'Master the art of iterative development with Nelson'
+---
+
+## What is Iterative Development?
+
+Iterative development is an approach where you build software in small, incremental cycles. Each cycle produces a working piece of software that you can test and refine.
+
+Nelson is built for this workflow, especially with the **Nelson Loop** feature.
+
+## Manual Iteration
+
+Even without Nelson Loop, you can iterate naturally:
+
+```
+You: Create a basic Express server
+
+Nelson: [Creates server.js with basic setup]
+
+You: Now add a /users endpoint that returns a list
+
+Nelson: [Adds /users endpoint]
+
+You: Add authentication middleware
+
+Nelson: [Adds auth middleware]
+
+You: The auth middleware has a bug - it's not checking token expiration
+
+Nelson: [Fixes the bug]
+```
+
+Each request builds on the previous work.
+
+## Automated Iteration with Nelson Loop
+
+For more complex tasks, Nelson Loop automates the iteration:
+
+```bash
+/nelson-loop "Implement a pagination system for the /users endpoint.
+Requirements:
+- Accept page and limit query params
+- Return total count in response
+- Handle edge cases (negative page, etc.)
+- Add tests
+
+Output <haha>PAGINATION DONE</haha> when tests pass." --completion-haha "PAGINATION DONE" --max-iterations 15
+```
+
+Nelson will:
+1. Implement pagination
+2. Run tests
+3. See failures
+4. Fix issues
+5. Repeat until tests pass
+6. Output completion signal
+
+## The TDD Cycle
+
+Nelson excels at Test-Driven Development:
+
+```bash
+/nelson-loop "Using TDD, implement a password strength validator:
+
+1. Write failing tests for weak passwords (too short, no numbers, etc.)
+2. Implement the validator to pass tests
+3. Write failing tests for strong passwords
+4. Update validator to pass all tests
+5. Refactor if needed
+
+Output <haha>TDD COMPLETE</haha> when all tests pass." --completion-haha "TDD COMPLETE" --max-iterations 20
+```
+
+## Debugging Iteration
+
+When debugging, Nelson naturally iterates:
+
+```
+You: The API is returning 500 errors on the /orders endpoint
+
+Nelson: Let me investigate...
+
+[Reads code, finds potential issue]
+[Makes a fix]
+[Runs tests - still failing]
+[Reads error logs]
+[Identifies root cause]
+[Applies correct fix]
+[Tests pass]
+
+HA-HA! Fixed it. The issue was a null reference when the order had no items.
+```
+
+## Iteration Strategies
+
+### 1. Start Simple, Add Complexity
+
+```
+You: Create a basic todo list
+You: Now add categories to todos
+You: Add due dates
+You: Add priority levels
+You: Add filtering by category/priority/date
+```
+
+### 2. Build the Happy Path First
+
+```
+You: Implement user registration (assume all inputs are valid)
+You: Now add validation for email format
+You: Add password strength requirements
+You: Handle duplicate email gracefully
+```
+
+### 3. Write Tests Along the Way
+
+```
+You: Add a search feature to the API
+You: Write tests for the search feature
+You: The tests are failing - can you fix the implementation?
+```
+
+## Best Practices for Iteration
+
+<CardGroup cols={2}>
+  <Card title="Keep Iterations Small" icon="minimize">
+    Smaller changes are easier to verify and debug
+  </Card>
+  <Card title="Test After Each Change" icon="vial">
+    Run tests frequently to catch issues early
+  </Card>
+  <Card title="Let Nelson See Previous Work" icon="eye">
+    Nelson reads files to understand context - use this to your advantage
+  </Card>
+  <Card title="Set Clear Goals" icon="bullseye">
+    Each iteration should have a specific, measurable goal
+  </Card>
+</CardGroup>
+
+## Example: Iterating on a Feature
+
+Watch how iteration refines a feature:
+
+**Iteration 1:** Basic implementation
+```
+You: Add a /search endpoint that searches todos by title
+```
+
+**Iteration 2:** Improve search
+```
+You: Make the search case-insensitive
+```
+
+**Iteration 3:** Add features
+```
+You: Allow searching by description too
+```
+
+**Iteration 4:** Optimize
+```
+You: Add pagination to search results
+```
+
+**Iteration 5:** Polish
+```
+You: Add highlighting of matched terms in results
+```
+
+Each iteration builds on the last, resulting in a polished feature.

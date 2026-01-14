@@ -1,0 +1,241 @@
+---
+title: 'Tools'
+description: 'File operations, bash commands, and more'
+---
+
+## Overview
+
+Nelson has access to powerful tools that let him interact with your filesystem and execute commands. These tools are what make Nelson a true coding assistant, not just a chatbot.
+
+<Info>
+  When Nelson uses a tool, you'll see an indicator in the output:
+
+  🔧 Tool: tool_name (running)
+  ✅ Tool: tool_name (success)
+</Info>
+
+## Available Tools
+
+### read_file
+
+Read the contents of any file in your project.
+
+```
+You: Read the package.json file
+```
+
+<ParamField path="path" type="string" required>
+  Path to the file (relative or absolute)
+</ParamField>
+
+**Use cases:**
+- Understanding existing code
+- Checking configuration files
+- Reviewing changes before editing
+
+---
+
+### write_file
+
+Create or overwrite a file with new content.
+
+```
+You: Create a new file called utils.js with a helper function
+```
+
+<ParamField path="path" type="string" required>
+  Path where the file should be written
+</ParamField>
+
+<ParamField path="content" type="string" required>
+  Content to write to the file
+</ParamField>
+
+**Features:**
+- Creates parent directories automatically
+- Overwrites existing files
+- Works with any file type
+
+---
+
+### edit_file
+
+Make targeted edits to existing files by replacing specific text.
+
+```
+You: In app.js, change the port from 3000 to 8080
+```
+
+<ParamField path="path" type="string" required>
+  Path to the file
+</ParamField>
+
+<ParamField path="old_string" type="string" required>
+  Exact text to find and replace
+</ParamField>
+
+<ParamField path="new_string" type="string" required>
+  Text to replace it with
+</ParamField>
+
+**Best for:**
+- Small, precise changes
+- Updating specific values
+- Fixing bugs in existing code
+
+---
+
+### list_directory
+
+List files and folders in a directory.
+
+```
+You: What files are in the src directory?
+```
+
+<ParamField path="path" type="string" default=".">
+  Directory path to list
+</ParamField>
+
+**Output format:**
+```
+[DIR] components
+[DIR] utils
+[FILE] index.js
+[FILE] App.js
+```
+
+---
+
+### bash
+
+Execute any bash command and see the output.
+
+```
+You: Run the tests
+You: Install lodash
+You: Check git status
+```
+
+<ParamField path="command" type="string" required>
+  The bash command to execute
+</ParamField>
+
+<ParamField path="timeout" type="number" default="30000">
+  Timeout in milliseconds
+</ParamField>
+
+**Common uses:**
+- Running tests (`npm test`, `pytest`)
+- Installing packages (`npm install`, `pip install`)
+- Git operations (`git status`, `git commit`)
+- Building projects (`npm run build`)
+- Starting servers (`npm start`)
+
+---
+
+### search_files
+
+Find files matching a pattern.
+
+```
+You: Find all TypeScript files in the project
+```
+
+<ParamField path="pattern" type="string" required>
+  Glob pattern (e.g., `*.js`, `**/*.tsx`)
+</ParamField>
+
+<ParamField path="path" type="string" default=".">
+  Base directory to search
+</ParamField>
+
+---
+
+### grep
+
+Search for text patterns across files.
+
+```
+You: Find all files that import the auth module
+```
+
+<ParamField path="pattern" type="string" required>
+  Regex pattern to search for
+</ParamField>
+
+<ParamField path="path" type="string" default=".">
+  File or directory to search
+</ParamField>
+
+<ParamField path="file_pattern" type="string">
+  Optional glob to filter files (e.g., `*.js`)
+</ParamField>
+
+## Tool Usage Examples
+
+### Creating a New Project
+
+```
+You: Set up a new Node.js project with Express
+
+Nelson: HA-HA! Let's get this project started...
+
+🔧 Tool: bash
+✅ Tool: bash (npm init -y)
+
+🔧 Tool: bash
+✅ Tool: bash (npm install express)
+
+🔧 Tool: write_file
+✅ Tool: write_file (index.js)
+
+🔧 Tool: write_file
+✅ Tool: write_file (.gitignore)
+
+Done! I've created:
+- package.json with dependencies
+- index.js with a basic Express server
+- .gitignore for node_modules
+```
+
+### Debugging a Test Failure
+
+```
+You: The tests are failing, can you fix them?
+
+Nelson: Let me investigate...
+
+🔧 Tool: bash
+✅ Tool: bash (npm test)
+
+I see the issue. The auth.test.js is failing because...
+
+🔧 Tool: read_file
+✅ Tool: read_file (src/auth.js)
+
+🔧 Tool: edit_file
+✅ Tool: edit_file (src/auth.js)
+
+🔧 Tool: bash
+✅ Tool: bash (npm test)
+
+HA-HA! Tests are passing now. The bug was...
+```
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Let Nelson Read First" icon="book">
+    Before editing, let Nelson read the file to understand context
+  </Card>
+  <Card title="Review Changes" icon="eye">
+    Nelson shows what tools are used - review file changes
+  </Card>
+  <Card title="Use Specific Paths" icon="folder-tree">
+    Provide clear file paths to avoid ambiguity
+  </Card>
+  <Card title="Trust the Process" icon="check">
+    Nelson chains tools together intelligently to accomplish complex tasks
+  </Card>
+</CardGroup>

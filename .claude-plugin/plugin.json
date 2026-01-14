@@ -1,0 +1,9 @@
+{
+  "name": "nelson-muntz",
+  "version": "1.0.0",
+  "description": "Implementation of the Nelson Muntz technique - continuous self-referential AI loops for interactive iterative development with <haha> completion signals.",
+  "author": {
+    "name": "Your Name",
+    "email": "your@email.com"
+  }
+}

@@ -1,0 +1,134 @@
+---
+title: 'Installation'
+description: 'Complete installation guide for Nelson CLI'
+---
+
+## Requirements
+
+Before installing Nelson CLI, make sure you have:
+
+<CardGroup cols={2}>
+  <Card title="Node.js 18+" icon="node-js">
+    Nelson requires Node.js version 18 or higher
+  </Card>
+  <Card title="Anthropic API Key" icon="key">
+    You'll need an API key from Anthropic
+  </Card>
+</CardGroup>
+
+## Install via npm
+
+The recommended way to install Nelson CLI:
+
+```bash
+npm install -g nelson-muntz-cli
+```
+
+Verify the installation:
+
+```bash
+nelson --version
+# nelson-muntz-cli v1.0.0
+```
+
+## Install via yarn
+
+```bash
+yarn global add nelson-muntz-cli
+```
+
+## Install via pnpm
+
+```bash
+pnpm add -g nelson-muntz-cli
+```
+
+## API Key Setup
+
+### Get Your API Key
+
+<Steps>
+  <Step title="Create an Anthropic account">
+    Go to [console.anthropic.com](https://console.anthropic.com/) and sign up or log in.
+  </Step>
+  <Step title="Navigate to API Keys">
+    Click on **API Keys** in the sidebar.
+  </Step>
+  <Step title="Create a new key">
+    Click **Create Key** and copy the generated key.
+  </Step>
+</Steps>
+
+### Configure the API Key
+
+Set the `ANTHROPIC_API_KEY` environment variable:
+
+<Tabs>
+  <Tab title="macOS/Linux">
+    ```bash
+    export ANTHROPIC_API_KEY="sk-ant-api03-..."
+    ```
+
+    To make it permanent, add to your shell profile:
+
+    ```bash
+    # For bash
+    echo 'export ANTHROPIC_API_KEY="sk-ant-api03-..."' >> ~/.bashrc
+
+    # For zsh
+    echo 'export ANTHROPIC_API_KEY="sk-ant-api03-..."' >> ~/.zshrc
+    ```
+  </Tab>
+  <Tab title="Windows">
+    ```powershell
+    # PowerShell
+    $env:ANTHROPIC_API_KEY = "sk-ant-api03-..."
+
+    # To make permanent, use System Properties > Environment Variables
+    ```
+  </Tab>
+</Tabs>
+
+## Verify Installation
+
+Run Nelson to verify everything is working:
+
+```bash
+nelson
+```
+
+You should see the animated Nelson logo followed by the welcome screen.
+
+<Warning>
+  If you see "No API key found!", make sure your `ANTHROPIC_API_KEY` environment variable is set correctly.
+</Warning>
+
+## Updating Nelson
+
+To update to the latest version:
+
+```bash
+npm update -g nelson-muntz-cli
+```
+
+## Uninstalling
+
+To remove Nelson CLI:
+
+```bash
+npm uninstall -g nelson-muntz-cli
+```
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Command not found: nelson">
+    Make sure npm's global bin directory is in your PATH. Run `npm bin -g` to find the directory and add it to your PATH.
+  </Accordion>
+  <Accordion title="No API key found">
+    Ensure you've set the `ANTHROPIC_API_KEY` environment variable. Try running `echo $ANTHROPIC_API_KEY` to verify it's set.
+  </Accordion>
+  <Accordion title="Permission denied">
+    On Unix systems, you may need to run with sudo: `sudo npm install -g nelson-muntz-cli`
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,109 @@
+---
+title: 'Configuration'
+description: 'Configure Nelson CLI to fit your workflow'
+---
+
+## Environment Variables
+
+Nelson CLI uses environment variables for configuration.
+
+### ANTHROPIC_API_KEY
+
+<ParamField path="ANTHROPIC_API_KEY" type="string" required>
+  Your Anthropic API key for Claude access
+</ParamField>
+
+```bash
+export ANTHROPIC_API_KEY="sk-ant-api03-..."
+```
+
+<Warning>
+  Never commit your API key to version control. Use environment variables or a `.env` file.
+</Warning>
+
+## Shell Configuration
+
+### Bash
+
+Add to `~/.bashrc`:
+
+```bash
+# Nelson CLI Configuration
+export ANTHROPIC_API_KEY="sk-ant-api03-..."
+
+# Optional: Create an alias
+alias n="nelson"
+```
+
+### Zsh
+
+Add to `~/.zshrc`:
+
+```bash
+# Nelson CLI Configuration
+export ANTHROPIC_API_KEY="sk-ant-api03-..."
+
+# Optional: Create an alias
+alias n="nelson"
+```
+
+### Fish
+
+Add to `~/.config/fish/config.fish`:
+
+```fish
+# Nelson CLI Configuration
+set -gx ANTHROPIC_API_KEY "sk-ant-api03-..."
+
+# Optional: Create an alias
+alias n="nelson"
+```
+
+## Working Directory
+
+Nelson operates in your current working directory. All file operations are relative to where you launched Nelson.
+
+```bash
+# Navigate to your project first
+cd ~/projects/my-app
+
+# Then launch Nelson
+nelson
+```
+
+<Tip>
+  Nelson can read, write, and search files in your current directory and subdirectories.
+</Tip>
+
+## Tool Permissions
+
+Nelson has access to powerful tools that can modify your filesystem. By default, Nelson will:
+
+- Read any file in your current directory tree
+- Write files when you ask
+- Execute bash commands
+- Search through your codebase
+
+<Info>
+  Nelson always shows you what tools are being used. You'll see indicators like:
+
+  🔧 Tool: write_file
+  ✅ Tool: write_file
+</Info>
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Use Project Directories" icon="folder">
+    Always run Nelson from your project root for best results
+  </Card>
+  <Card title="Git Integration" icon="code-branch">
+    Nelson works great with git - he can commit, branch, and push
+  </Card>
+  <Card title="Set Iteration Limits" icon="shield">
+    When using Nelson Loop, always set --max-iterations as a safety net
+  </Card>
+  <Card title="Review Changes" icon="eye">
+    Nelson shows what he's doing - review file changes before proceeding
+  </Card>
+</CardGroup>
