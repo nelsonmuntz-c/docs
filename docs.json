@@ -10,15 +10,7 @@
   "colors": {
     "primary": "#DE7356",
     "light": "#E8967E",
-    "dark": "#C4624A",
-    "background": {
-      "light": "#FAFAFA",
-      "dark": "#1A1A1A"
-    },
-    "anchors": {
-      "from": "#DE7356",
-      "to": "#B85A45"
-    }
+    "dark": "#C4624A"
   },
   "topbarLinks": [
     {
