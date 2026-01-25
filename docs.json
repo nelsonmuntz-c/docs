@@ -12,6 +12,12 @@
     "light": "#E8967E",
     "dark": "#C4624A"
   },
+  "background": {
+    "color": {
+      "light": "#FDF5F3",
+      "dark": "#1A1615"
+    }
+  },
   "topbarLinks": [
     {
       "name": "X",
