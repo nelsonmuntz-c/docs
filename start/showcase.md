@@ -9,7 +9,7 @@ summary: "Community-built projects and integrations powered by Clawdia"
 Real projects from the community. See what people are building with Clawdia.
 
 <Info>
-**Want to be featured?** Share your project in [#showcase on Discord](https://discord.gg/clawdia) or [tag @clawdiacc on X](https://x.com/clawdiacc).
+**Want to be featured?** Tag [@clawdiacc on X](https://x.com/clawdiacc) with your project!
 </Info>
 
 ## 🆕 Fresh from the Community
@@ -335,7 +335,7 @@ Have something to share? We'd love to feature it!
 
 <Steps>
   <Step title="Share It">
-    Post in [#showcase on Discord](https://discord.gg/clawdia) or [tweet @clawdiacc](https://x.com/clawdiacc)
+    Tag [@clawdiacc on X](https://x.com/clawdiacc)
   </Step>
   <Step title="Include Details">
     Tell us what it does, link to the repo/demo, share a screenshot if you have one
