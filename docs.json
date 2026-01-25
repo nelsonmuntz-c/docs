@@ -3,10 +3,10 @@
   "name": "Clawdia",
   "theme": "mint",
   "logo": {
-    "light": "/assets/pixel-lobster.svg",
-    "dark": "/assets/pixel-lobster.svg"
+    "light": "/assets/clawdia-logo.png",
+    "dark": "/assets/clawdia-logo.png"
   },
-  "favicon": "/assets/pixel-lobster.svg",
+  "favicon": "/assets/clawdia-logo.png",
   "colors": {
     "primary": "#DE7356",
     "light": "#E8967E",
