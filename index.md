@@ -8,10 +8,6 @@ read_when:
 > *"EXFOLIATE! EXFOLIATE!"* — A space lobster, probably
 
 <p align="center">
-  <img src="whatsapp-clawd.jpg" alt="Clawdia" width="420" />
-</p>
-
-<p align="center">
   <strong>Any OS + WhatsApp/Telegram/Discord/iMessage gateway for AI agents (Pi).</strong><br />
   Plugins add Mattermost and more.
   Send a message, get an agent response — from your pocket.
@@ -25,7 +21,7 @@ read_when:
 </p>
 
 Clawdia bridges WhatsApp (via WhatsApp Web / Baileys), Telegram (Bot API / grammY), Discord (Bot API / channels.discord.js), and iMessage (imsg CLI) to coding agents like [Pi](https://github.com/badlogic/pi-mono). Plugins add Mattermost (Bot API + WebSocket) and more.
-Clawdia also powers [Clawd](https://clawd.me), the space‑lobster assistant.
+Clawdia is your space‑lobster assistant.
 
 ## Start here
 
@@ -222,8 +218,7 @@ Example:
 
 ## Credits
 
-- **Clawd** — The space lobster who demanded a better name
-- **The Community** — All the amazing contributors who make Clawdia better every day
+- **The Community** — All the contributors who make Clawdia better every day
 
 ## License
 
