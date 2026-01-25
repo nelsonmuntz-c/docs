@@ -659,6 +659,6 @@ Found a vulnerability in Clawdia? Please report responsibly:
 
 ---
 
-*"Security is a process, not a product. Also, don't trust lobsters with shell access."* — Someone wise, probably
+*"Security is a process, not a product. Also, don't trust cats with shell access."* — Someone wise, probably
 
-🦞🔐
+🐱🔐

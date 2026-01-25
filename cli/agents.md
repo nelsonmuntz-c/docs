@@ -16,16 +16,16 @@ Related:
 
 ```bash
 clawdia agents list
-clawdia agents add work --workspace ~/clawd-work
-clawdia agents set-identity --workspace ~/clawd --from-identity
-clawdia agents set-identity --agent main --avatar avatars/clawd.png
+clawdia agents add work --workspace ~/clawdia-work
+clawdia agents set-identity --workspace ~/clawdia --from-identity
+clawdia agents set-identity --agent main --avatar avatars/clawdia.png
 clawdia agents delete work
 ```
 
 ## Identity files
 
 Each agent workspace can include an `IDENTITY.md` at the workspace root:
-- Example path: `~/clawd/IDENTITY.md`
+- Example path: `~/clawdia/IDENTITY.md`
 - `set-identity --from-identity` reads from the workspace root (or an explicit `--identity-file`)
 
 Avatar paths resolve relative to the workspace root.
@@ -41,13 +41,13 @@ Avatar paths resolve relative to the workspace root.
 Load from `IDENTITY.md`:
 
 ```bash
-clawdia agents set-identity --workspace ~/clawd --from-identity
+clawdia agents set-identity --workspace ~/clawdia --from-identity
 ```
 
 Override fields explicitly:
 
 ```bash
-clawdia agents set-identity --agent main --name "Clawd" --emoji "🦞" --avatar avatars/clawd.png
+clawdia agents set-identity --agent main --name "Clawdia" --emoji "🐱" --avatar avatars/clawdia.png
 ```
 
 Config sample:
@@ -59,10 +59,10 @@ Config sample:
       {
         id: "main",
         identity: {
-          name: "Clawd",
-          theme: "space lobster",
-          emoji: "🦞",
-          avatar: "avatars/clawd.png"
+          name: "Clawdia",
+          theme: "space cat",
+          emoji: "🐱",
+          avatar: "avatars/clawdia.png"
         }
       }
     ]

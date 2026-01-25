@@ -5,10 +5,10 @@ read_when:
 ---
 # Clawdia 🦞
 
-> *"EXFOLIATE! EXFOLIATE!"* — A space lobster, probably
+> *"MEOW! MEOW!"* — A space cat, probably
 
 Clawdia bridges WhatsApp (via WhatsApp Web / Baileys), Telegram (Bot API / grammY), Discord (Bot API / channels.discord.js), and iMessage (imsg CLI) to coding agents like [Pi](https://github.com/badlogic/pi-mono). Plugins add Mattermost (Bot API + WebSocket) and more.
-Clawdia is your space‑lobster assistant.
+Clawdia is your space cat assistant.
 
 ## Start here
 
@@ -197,7 +197,7 @@ Example:
 
 ## The name
 
-**Clawdia = CLAW + TARDIS** — because every space lobster needs a time-and-space machine.
+**Clawdia = CLAW + TARDIS** — because every space cat needs a time-and-space machine.
 
 ---
 
@@ -209,7 +209,7 @@ Example:
 
 ## License
 
-MIT — Free as a lobster in the ocean 🦞
+MIT — Free as a cat in the sun 🐱
 
 ---
 

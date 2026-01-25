@@ -2775,7 +2775,7 @@ Defaults:
 - enabled: `true`
 - control URL: `http://127.0.0.1:18791` (CDP uses `18792`)
 - CDP URL: `http://127.0.0.1:18792` (control URL + 1, legacy single-profile)
-- profile color: `#FF4500` (lobster-orange)
+- profile color: `#FF4500` (cat-orange)
 - Note: the control server is started by the running gateway (Clawdia.app menubar, or `clawdia gateway`).
 - Auto-detect order: default browser if Chromium-based; otherwise Chrome → Brave → Edge → Chromium → Chrome Canary.
 
