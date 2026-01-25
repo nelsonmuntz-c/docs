@@ -215,4 +215,4 @@ git pull
 
 - Run `clawdia doctor` again and read the output carefully (it often tells you the fix).
 - Check: [Troubleshooting](/gateway/troubleshooting)
-- Ask in Discord: https://channels.discord.gg/clawd
+- Ask in Discord: https://channels.discord.gg/clawdia

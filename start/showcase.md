@@ -9,80 +9,10 @@ summary: "Community-built projects and integrations powered by Clawdia"
 Real projects from the community. See what people are building with Clawdia.
 
 <Info>
-**Want to be featured?** Share your project in [#showcase on Discord](https://discord.gg/clawd) or [tag @clawdia on X](https://x.com/clawdia).
+**Want to be featured?** Share your project in [#showcase on Discord](https://discord.gg/clawdia) or [tag @clawdiacc on X](https://x.com/clawdiacc).
 </Info>
 
-## 🎥 Clawdia in Action
-
-Full setup walkthrough (28m) by VelvetShark.
-
-<div
-  style={{
-    position: "relative",
-    paddingBottom: "56.25%",
-    height: 0,
-    overflow: "hidden",
-    borderRadius: 16,
-  }}
->
-  <iframe
-    src="https://www.youtube-nocookie.com/embed/SaWSPZoPX34"
-    title="Clawdia: The self-hosted AI that Siri should have been (Full setup)"
-    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-    frameBorder="0"
-    loading="lazy"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowFullScreen
-  />
-</div>
-
-[Watch on YouTube](https://www.youtube.com/watch?v=SaWSPZoPX34)
-
-<div
-  style={{
-    position: "relative",
-    paddingBottom: "56.25%",
-    height: 0,
-    overflow: "hidden",
-    borderRadius: 16,
-  }}
->
-  <iframe
-    src="https://www.youtube-nocookie.com/embed/mMSKQvlmFuQ"
-    title="Clawdia showcase video"
-    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-    frameBorder="0"
-    loading="lazy"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowFullScreen
-  />
-</div>
-
-[Watch on YouTube](https://www.youtube.com/watch?v=mMSKQvlmFuQ)
-
-<div
-  style={{
-    position: "relative",
-    paddingBottom: "56.25%",
-    height: 0,
-    overflow: "hidden",
-    borderRadius: 16,
-  }}
->
-  <iframe
-    src="https://www.youtube-nocookie.com/embed/5kkIJNUGFho"
-    title="Clawdia community showcase"
-    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-    frameBorder="0"
-    loading="lazy"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowFullScreen
-  />
-</div>
-
-[Watch on YouTube](https://www.youtube.com/watch?v=5kkIJNUGFho)
-
-## 🆕 Fresh from Discord
+## 🆕 Fresh from the Community
 
 <CardGroup cols={2}>
 
@@ -405,7 +335,7 @@ Have something to share? We'd love to feature it!
 
 <Steps>
   <Step title="Share It">
-    Post in [#showcase on Discord](https://discord.gg/clawd) or [tweet @clawdia](https://x.com/clawdia)
+    Post in [#showcase on Discord](https://discord.gg/clawdia) or [tweet @clawdiacc](https://x.com/clawdiacc)
   </Step>
   <Step title="Include Details">
     Tell us what it does, link to the repo/demo, share a screenshot if you have one

@@ -8,7 +8,17 @@
   },
   "favicon": "/assets/pixel-lobster.svg",
   "colors": {
-    "primary": "#FF5A36"
+    "primary": "#DE7356",
+    "light": "#E8967E",
+    "dark": "#C4624A",
+    "background": {
+      "light": "#FAFAFA",
+      "dark": "#1A1A1A"
+    },
+    "anchors": {
+      "from": "#DE7356",
+      "to": "#B85A45"
+    }
   },
   "topbarLinks": [
     {
@@ -16,8 +26,8 @@
       "url": "https://github.com/nelsonmuntz-c/clawdia"
     },
     {
-      "name": "Releases",
-      "url": "https://github.com/nelsonmuntz-c/clawdia/releases"
+      "name": "X",
+      "url": "https://x.com/clawdiacc"
     }
   ],
   "redirects": [
