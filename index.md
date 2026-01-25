@@ -7,19 +7,6 @@ read_when:
 
 > *"EXFOLIATE! EXFOLIATE!"* — A space lobster, probably
 
-<p align="center">
-  <strong>Any OS + WhatsApp/Telegram/Discord/iMessage gateway for AI agents (Pi).</strong><br />
-  Plugins add Mattermost and more.
-  Send a message, get an agent response — from your pocket.
-</p>
-
-<p align="center">
-  <a href="https://github.com/nelsonmuntz-c/clawdia">GitHub</a> ·
-  <a href="https://github.com/nelsonmuntz-c/clawdia/releases">Releases</a> ·
-  <a href="/">Docs</a> ·
-  <a href="/start/clawd">Clawdia assistant setup</a>
-</p>
-
 Clawdia bridges WhatsApp (via WhatsApp Web / Baileys), Telegram (Bot API / grammY), Discord (Bot API / channels.discord.js), and iMessage (imsg CLI) to coding agents like [Pi](https://github.com/badlogic/pi-mono). Plugins add Mattermost (Bot API + WebSocket) and more.
 Clawdia is your space‑lobster assistant.
 
